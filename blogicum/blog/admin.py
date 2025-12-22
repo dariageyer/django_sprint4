@@ -1,6 +1,10 @@
 from django.contrib import admin
+from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin
 
 from .models import Category, Comment, Location, Post
+
+User = get_user_model()
 
 LENGTH_STRING = 50
 NUMBER_OF_POSTS = 10
@@ -88,3 +92,6 @@ class CommentAdmin(admin.ModelAdmin):
     )
     list_filter = ('text',)
     list_per_page = NUMBER_OF_POSTS
+
+
+admin.site.register(User, UserAdmin)
