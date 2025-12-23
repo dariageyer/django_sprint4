@@ -5,7 +5,7 @@ from django.contrib.auth.admin import UserAdmin
 from .models import Category, Comment, Location, Post
 
 User = get_user_model()
-
+admin.site.unregister(User)
 LENGTH_STRING = 50
 NUMBER_OF_POSTS = 10
 
